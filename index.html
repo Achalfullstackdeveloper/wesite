@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satynam Traders</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .heading {
+      width: 1200px;
+      height: 130px;
+      border: 30px solid;
+      border-radius: 50px;
+      margin-left: 150px;
+      background-color: whitesmoke;
+    }
+
+    .navbar-bran a {
+      margin-left: 40px;
+    }
+    .fixed-top {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 130;
+  }
+  
+  
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      padding-top: 56px;
+    }
+
+    .contact-container {
+      display: flex;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .contact-form {
+      flex: 1;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h2 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input,
+    textarea {
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #ec790e;
+      color: #fff;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 3px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #c9ad1e;
+    }
+
+    .map-container {
+      flex: 1;
+      margin-left: 1rem;
+    }
+
+    .map-container iframe {
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .benefits {
+      text-align: center;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      background-color: transparent;
+    }
+
+    h5 {
+      color: rgb(246, 246, 249);
+      font-family: verdana;
+      font-size: 300%;
+    }
+
+    .slider {
+      color: rgb(251, 245, 245);
+      font-family: courier;
+      font-size: 160%;
+    }
+
+    /* contact Section */
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      gap: 3rem;
+      padding-left: 30px;
+      margin-top: 50px;
+      background-color: #599552;
+    }
+
+    .contact h2 {
+      font-size: 60px;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .contact h2 span {
+      color: #ffee10;
+
+      margin-bottom: 800px;
+
+    }
+
+    .contact-list {
+      margin-bottom: 3rem;
+      align-items: center;
+    }
+
+    .contact-list li {
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .contact-list i {
+
+      margin-bottom: 10px;
+      display: block;
+
+    }
+
+    .contact-list i {
+      display: inline-block;
+      color: #e8e0e0;
+      font-size: 20px;
+      font-weight: 600;
+      transition: all .40s ease;
+      cursor: pointer;
+      margin-top: 7px;
+
+    }
+
+    .contact-list li a:hover {
+      transform: scale(1.01) translateY(-5px);
+      color: #ffee10;
+    }
+
+    .contact-icons i {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 2px solid #ffee10;
+      border-radius: 50%;
+      font-size: 20px;
+      color: #ffee10;
+      text-decoration: none;
+      margin: 25px 10px 20px 0;
+      transition: .5s ease;
+      opacity: 0;
+      animation: slideLeft 1s ease forwards;
+      animation-delay: calc(.2s * var(--1));
+    }
+
+    .contact-icons i:hover {
+      color: #ffee10;
+      background: #333;
+      box-shadow: 0 0 15px #ffee10;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+
+      .map-container {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      .map-container iframe {
+        height: 300px;
+      }
+    }
+
+    .d-flex {
+      flex-direction: row
+    }
+
+    .d-flex .search-container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    p {
+      font-size: 20px;
+      color: #333;
+    }
+
+    h3 {
+      color: #130bfa;
+      font-size: 30px;
+    }
+
+    .menu {
+
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 40px;
+    }
+
+
+
+    .carousel-item {
+      position: relative;
+    }
+
+    .full-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+
+      padding: 2rem;
+    }
+
+    .image-container {
+      position: relative;
+      opacity: 0.9;
+      background-color: black;
+      width: 100%;
+      height: 400px;
+      /* Adjust as needed */
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Black with 50% opacity */
+    }
+
+    .heading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      z-index: 1;
+      /* Add any other styles for your heading */
+    }
+
+    .intro-section {
+      max-width: 800px;
+      animation: fadeInUp 0.1s ease forwards;
+
+      background-color: transparent;
+      /* Solid white background with slight transparency */
+
+      border-radius: 10px;
+
+      margin-top: 30px;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .btn-primary {
+      --bs-btn-color: #fff;
+      --bs-btn-bg: #e56621;
+      --bs-btn-border-color: #f4aa09;
+      --bs-btn-hover-color: #fff;
+      --bs-btn-hover-bg: #ffc505;
+      --bs-btn-hover-border-color:none;
+      --bs-btn-focus-shadow-rgb: 49, 132, 253;
+      --bs-btn-active-color: #fff;
+      --bs-btn-active-bg: #0a58ca;
+      --bs-btn-active-border-color: #0a53be;
+      --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+      --bs-btn-disabled-color: #fff;
+      --bs-btn-disabled-bg: #0d6efd;
+      --bs-btn-disabled-border-color: #0d6efd;
+  }
+    .intro-section h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #f4f4f4;
+      margin-left: 0px;
+    }
+
+    .intro-section p {
+      font-size: 1.9rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      color: #e8e0e0;
+    }
+
+    .intro-section ul {
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .intro-section li {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+      color: rgb(188, 206, 55);
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #FFA500;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #ff6a00;
+      transform: translateY(-2px);
+    }
+
+    .portfolio {
+      padding: 50px 0;
+      background-color: #f8f9fa;
+    }
+
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      border: none;
+      background-color: #e9ecef;
+      color: #495057;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background-color: #f68032;
+      color: white;
+    }
+
+    .card {
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .quantity-input {
+      text-align: center;
+    }
+     .footer {
+      background-color: #343a40;
+      color: white;
+      padding: 40px 0;
+      font-size: 14px;
+    }
+    .footer a {
+      color: #f8f9fa;
+    }
+    .footer a:hover {
+      color: #ffc107;
+    }
+    .footer-logo img {
+      width: 150px;
+    }
+    .footer-heading {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .footer .social-icons a {
+      margin-right: 15px;
+      color: #f8f9fa;
+      font-size: 20px;
+    }
+    .footer .social-icons a:hover {
+      color: #ffc107;
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+    .navbar-brand img {
+        margin-right: 10px;
+    }
+    .carousel-item img {
+        object-fit: cover;
+        height: 60vh;
+    }
+    .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 1px solid #fff;
+        padding: 20px;
+    }
+    .product-img {
+        max-width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+    @media (max-width: 768px) {
+        .carousel-caption h1 {
+            font-size: 14px;
+        }
+        .carousel-caption p {
+            font-size: 10px;
+        }
+    }
+    }
+    @media (max-width: 576px) {
+      .navbar-brand {
+        font-size: 1.2rem; 
+        margin-left: 0px; /* Adjust brand size for smaller screens */
+      }
+      .nav-link {
+        font-size: 0.9rem; /* Adjust link size for smaller screens */
+      }
+      #languageToggle {
+        font-size: 0.8rem; /* Adjust button size for smaller screens */
+      }
+    }
+
+    @media (min-width: 577px) and (max-width: 768px) {
+      .navbar-brand {
+        font-size: 1.4rem;
+        margin-left: 0px; /* Adjust brand size for medium screens */
+      }
+      .nav-link {
+        font-size: 1rem; /* Adjust link size for medium screens */
+      }
+      #languageToggle {
+        font-size: 0.9rem; /* Adjust button size for medium screens */
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 992px) {
+      .navbar-brand {
+        font-size: 1.6rem;
+        margin-left: 0px;  /* Adjust brand size for medium-large screens */
+      }
+      .nav-link {
+        font-size: 1.1rem; /* Adjust link size for medium-large screens */
+      }
+      #languageToggle {
+        font-size: 1rem; /* Adjust button size for medium-large screens */
+      }
+    }
+
+    @media (min-width: 993px) {
+      .navbar-brand {
+        font-size: 1.8rem; /* Adjust brand size for larger screens */
+      }
+      .nav-link {
+        font-size: 1.2rem; /* Adjust link size for larger screens */
+      }
+      #languageToggle {
+        font-size: 1.1rem; /* Adjust button size for larger screens */
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+      <img src="https://www.wellbeingphd.com/wp-content/uploads/2017/11/Download-Kabir-Das-Ji-HD-Pic-1024x768.jpg" style="height: 50px;width: 50px;border-radius:50%;margin-left:0;">
+
+      <a class="navbar-brand" href="#" data-translate="brand">Satynam Traders</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#home" data-translate="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about" data-translate="about-us">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#project" data-translate="Products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#order" data-translate="order">Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact" data-translate="contact-us">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tel:+919130205662">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+              </svg> Call Us
+            </a>
+          </li>
+        </ul>
+        <button id="languageToggle" class="btn btn-outline-light">हिंदी / English</button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Bootstrap JS (including Popper.js) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <!--endnavbar-->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    var navbarToggler = document.querySelector('.navbar-toggler');
+    var navbarCollapse = document.querySelector('.navbar-collapse');
+  
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.getComputedStyle(navbarToggler).display !== 'none') {
+          navbarCollapse.classList.remove('show');
+        }
+      });
+    });
+  });
+</script>
+  <!-- carousel -->
+  <section id="home" class="homeus"> 
+  <div id="carouselExampleDark" class="carousel carousel-dark slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+
+        <img src="https://t4.ftcdn.net/jpg/01/42/07/35/360_F_142073565_fSXl1rQIhFlux5ra9Z74tpuBRueFjzlE.jpg"
+          class="d-block w-100" alt="Peanut field" height="700px" style=" opacity: 1;
+background-color: black;">
+
+        <div class="carousel-caption d-none d-md-block full-overlay"
+          style="background-color:black; border: 1px solid rgb(248, 248, 248); opacity: 0.7;">
+          <h1 style="text-align: left;color:rgb(240, 235, 235); font-size:60px ;margin-top:30px">
+            <b data-translate="brand">Satynam Industries and Traders</b>
+          </h1>
+          <div class="intro-section">
+            <p style="margin-top:30px ;">
+              <b data-translate="discover">Discover Nature's Golden Nuggets</b>
+            </p>
+            <ul>
+              <b>
+                <li data-translate="premium">Premium Quality Peanuts</li>
+                <li data-translate="fresh">Farm-Fresh and Nutritious</li>
+                <li data-translate="support">Supporting Local Farmers</li>
+              </b>
+            </ul>
+            <a href="#project" class="cta-button" data-translate="explore">Explore Our Peanut Paradise</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img
+          src="https://www.foodnavigator.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/foodnavigator.com/news/market-trends/peanut-shortage-what-caused-it-and-is-it-set-to-last/17376501-1-eng-GB/Peanut-shortage-What-caused-it-and-is-it-set-to-last.jpg"
+          class="d-block w-100" alt="..." height="700px">
+        <div class="carousel-caption d-none d-md-block full-overlay"
+          style="background-color:black; border: 1px solid rgb(248, 248, 248); opacity: 0.6;">
+          <h5 data-translate="peanut-rich-fiber" style="margin-top: 20px; font-size: 60px;"><b>Peanut Reach In Fibre</b>
+          </h5>
+          <p class="slider" data-translate="raw-peanuts-fiber" style="margin-top: 30px;font-size: 40px;"><b>Raw Peanuts
+              Are Also An Excellent Source Of Dietary
+              Fiber.</b></p>
+        </div>
+      </div>
+      <div class="carousel-item ">
+        <img
+          src="https://img.pikbest.com/wp/202345/nut-peanut-peanuts-with-different-nuts-on-top-of-each-other-black-background_9582520.jpg!w700wp"
+          class="d-block w-100" alt="..." height="700px">
+        <div class="carousel-caption d-none d-md-block full-overlay">
+          <h5 data-translate="best-peanut-sale" style="margin-top: 20px;"><b>Best Peanut and Nut sale</b></h5>
+          <p class="slider" data-translate="peanuts-healthy-treat"><b>Peanuts Are A Healthy Treat That Is High In
+              Protein,
+              Fiber, And Heart-Healthy Nutrients.</b></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://aradbranding.com/en/wp-content/uploads/2022/08/1612643705_thbt-e1660628601787.jpg"
+          class="d-block w-100" alt="..." height="700px">
+        <div class="carousel-caption d-none d-md-block full-overlay" style="background-color: #1e1c1c; opacity: 0.6;">
+          <h5 data-translate="peanut-varieties" style=" font-size:60px;"><b>Varieties Of Peanuts And Nuts</b></h5>
+          <p class="slider" data-translate="peanut-protein"><b>A Single One-Ounce Serving Of Raw Peanuts Provides A
+              Whopping Seven Grams Of Protein.</b></p>
+        </div>
+      </div>
+    </div>
+
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev"
+      style="background-color: transparent">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden" data-translate="previous" style="color: #ddd;">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next"
+      style="background-color: transparent">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden" data-translate="next">Next</span>
+    </button>
+  </div><br>
+  <br>
+  </section>
+  <!--endcarousel-->
+  <!---->
+  <!--menu-->
+  <section id="project" class="portfolio">
+  <<div class="container">
+    <div class="menu">
+      <h1 style="text-align: center; font-size:60px"><b data-translate="our-products">Our Products</b></h1>
+    </div>
+    <br><br><br>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/6607/6607674.png" alt="" height="300px">
+        <h2 class="fw-normal" data-translate="peanuts">Peanuts</h2>
+        <p><a class="btn btn-secondary order-button" href="#" data-translate="order">Order »</a></p>
+      </div>
+      <div class="col-lg-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/7752/7752972.png" alt="" height="300px">
+        <h2 class="fw-normal" data-translate="flour">Flour</h2>
+        <p><a class="btn btn-secondary order-button" href="#" data-translate="order">Order »</a></p>
+      </div>
+      <div class="col-lg-4">
+        <img src="https://static.thenounproject.com/png/3013662-200.png" alt="" height="300px">
+        <h2 class="fw-normal" data-translate="peanut-oil">Peanut Oil</h2>
+        <p><a class="btn btn-secondary order-button" href="#" data-translate="order">Order »</a></p>
+      </div>
+    </div>
+    </div>
+<br><br>
+    <!--end menu-->
+    <!---->
+
+    
+      <div class="container">
+        <div class="main-text">
+          <!-- Your main text content here -->
+        </div>
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all" data-translate="all">All</button>
+          <button class="filter-btn" data-filter="peanuts" data-translate="peanuts">Peanuts</button>
+          <button class="filter-btn" data-filter="flour" data-translate="flour">Flour</button>
+          <button class="filter-btn" data-filter="oil" data-translate="peanut-oil">Peanut Oil</button>
+        </div>
+        <br><br>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" id="product-gallery">
+          <!-- Peanuts Products -->
+          <div class="col" data-category="peanuts">
+            <div class="card shadow-sm">
+              <img src="https://5.imimg.com/data5/SH/LA/MY-37404391/roasted-peanuts-500x500.jpg" alt="" height="360px"
+                width="420px">
+              <div class="card-body">
+                <h1 data-translate="white-peanuts">White Peanuts</h1>
+                <h2>90/-</h2>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button class="btn btn-primary w-100 order-button" data-bs-toggle="modal"
+                      data-bs-target="#orderModal" data-translate="order">ORDER</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-category="peanuts">
+            <div class="card shadow-sm">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ58GvGHtMpLCJvMp94yaqMW70bzmwf5_l3qKpaX_tJQLRtZBUyLkZcanS4SwkWVvnZI_o&usqp=CAU"
+                alt="" height="360px" width="420px">
+              <div class="card-body">
+                <h1 data-translate="peanuts">Peanuts</h1>
+                <h2>100/-</h2>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button class="btn btn-primary w-100 order-button" data-bs-toggle="modal"
+                      data-bs-target="#orderModal" data-translate="order">ORDER</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-category="peanuts">
+            <div class="card shadow-sm">
+              <img
+                src="https://image.made-in-china.com/2f0j00RIYoMPlqAdbS/China-Peanut-Big-Size-Peanut-Kernel-Red-Skin-Cheap-Price-Good-Quality.webp"
+                alt="" height="360px" width="420px">
+              <div class="card-body">
+                <h1 data-translate="peanuts">Peanuts</h1>
+                <h2>120/-</h2>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button class="btn btn-primary w-100 order-button" data-bs-toggle="modal"
+                      data-bs-target="#orderModal" data-translate="order">ORDER</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-category="peanuts">
+            <div class="card shadow-sm">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUJmB7qPYX6kyc3dyOEfZBwvw9nxH_Z_dkzNw1lTE7XEQfJRcMzY3ga-Hh2QvqnLaiDoE&usqp=CAU"
+                alt="" height="360px" width="420px">
+              <div class="card-body">
+                <h1 data-translate="ground-nut">Ground Nut</h1>
+                <h2>80/-</h2>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button class="btn btn-primary w-100 order-button" data-bs-toggle="modal"
+                      data-bs-target="#orderModal" data-translate="order">ORDER</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-category="peanuts">
+            <div class="card shadow-sm">
+              <img src="https://static.toiimg.com/photo/103099895.cms" alt="" height="360px" width="420px">
+              <div class="card-body">
+                <h1 data-translate="red-peanut">Red Peanuts</h1>
+                <h2>120/-</h2>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button class="btn btn-primary w-100 order-button" data-bs-toggle="modal"
+                      data-bs-target="#orderModal" data-translate="order">ORDER</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-category="peanuts">
+            <div class="card shadow-sm">
+              <img
+                src="https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325003/peanuts-in-a-bowl-on-wooden-table-top-down-view.jpg"
+                alt="" height="360px" width="420px">
+              <div class="card-body">
+                <h1 data-translate="peanuts">Peanuts</h1>
+                <h2>90/-</h2>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button class="btn btn-primary w-100 order-button" data-bs-toggle="modal"
+                      data-bs-target="#orderModal" data-translate="order">ORDER</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Flour Products -->
+          <div class="col" data-category="flour">
+            <div class="card shadow-sm">
+              <img src="https://example.com/wheat-flour-image.jpg" alt="Wheat Flour" height="360px" width="420px">
+              <div class="card-body">
+                <h1 data-translate="wheat-flour">Wheat Flour</h1>
+                <h2>60/-</h2>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button class="btn btn-primary w-100 order-button" data-bs-toggle="modal"
+                      data-bs-target="#orderModal" data-translate="order">ORDER</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-category="flour">
+            <div class="card shadow-sm">
+              <img src="https://example.com/besan-flour-image.jpg" alt="Besan Flour" height="360px" width="420px">
+              <div class="card-body">
+                <h1 data-translate="beasn-flour">Besan Flour</h1>
+                <h2>80/-</h2>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button class="btn btn-primary w-100 order-button" data-bs-toggle="modal"
+                      data-bs-target="#orderModal" data-translate="order">ORDER</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Oil Products -->
+          <div class="col" data-category="oil">
+            <div class="card shadow-sm">
+              <img src="https://example.com/peanut-oil-image.jpg" alt="Peanut Oil" height="360px" width="420px">
+              <div class="card-body">
+                <h1 data-translate="peant-oil">Peanut Oil</h1>
+                <h2>150/-</h2>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button class="btn btn-primary w-100 order-button" data-bs-toggle="modal"
+                      data-bs-target="#orderModal" data-translate="order">ORDER</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const products = document.querySelectorAll('#product-gallery .col');
+
+        filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            products.forEach(product => {
+              if (filter === 'all' || product.getAttribute('data-category') === filter) {
+                product.style.display = '';
+              } else {
+                product.style.display = 'none';
+              }
+            });
+
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+          });
+        });
+      });
+    </script>
+    <!-- Order Modal -->
+    <section id="order" class="orderus"> 
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="orderModalLabel" style="color: #353434; font-size:40px; text-align:center"
+              data-translate="place-order">
+              <b>Place Your Order</b>
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="orderForm">
+              <div class="mb-3">
+                <label for="customerName" class="form-label" data-translate="name"><b>Name</b></label>
+                <input type="text" class="form-control" id="customerName" required>
+              </div>
+              <div class="mb-3">
+                <label for="customerPhone" class="form-label" data-translate="phone"><b>phone-no</b></label>
+                <input type="tel" class="form-control" id="customerPhone" required>
+              </div>
+              <div class="mb-3">
+                <label for="customerAddress" class="form-label" data-translate="address"><b>Address</b></label>
+                <textarea class="form-control" id="customerAddress" rows="3" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="orderDetails" class="form-label" data-translate="order-details"><b>Order Details</b></label>
+                <p id="orderDetails">
+                  <a class="nav-link" href="tel:+919545966656">+91 9545966656</a>
+                </p>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+              data-translate="close">Close</button>
+            <button type="button" class="btn btn-primary" id="submitOrder" data-translate="place-order">Place
+              Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- Order Section -->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+      <div class="container">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="https://www.icrisat.org/assets/crops/groundnut-banner.jpg" class="d-block w-100" alt="..."
+            height="300px">
+          <div class="carousel-caption d-none d-md-block"
+            style="margin:10px; background-color:black; border: 1px solid rgb(248, 248, 248); opacity: 0.6;">
+            <p style="color: white; font-size:30px" data-translate="carousel-text">
+              Use Roasted Peanuts To Make Your Favorite Trail Mix At Home, Or For Pure, Unadulterated, Nutty Snacking!
+            </p>
+            
+            <a href="#project" class="cta-button"   data-translate="shop-now" style=" font-size:25px;border-radius: 30px; background-color:transparent; border :solid rgb(254, 151, 8);color:rgb(254, 151, 8)"
+         > shop now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--end order -->
+    <br><br>
+    <br><br>
+    <br>
+    <br>
+    <!--about us-->
+    <!-- About Us Section -->
+    <section id="about" class="aboutus"> 
+    <div class="container">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <h1 style="text-align: center;font-size:60px " data-translate="about-us-title"><b>ABOUT US</b></h1>
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img src="https://graunuts.com/wp-content/uploads/2023/11/Nuts-G3-Peanuts.png.webp"
+            class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="300" height="300" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" style="font-size: 40px;"
+            data-translate="commitment-title">
+            Our Commitment to Quality
+          </h1>
+          <p class="lead" data-translate="commitment-text-1">
+            At our company, we pride ourselves on offering the highest quality peanuts and nut-based products. Our
+            journey began with a passion for nutritious and delicious snacks, and we continue to uphold these values in
+            everything we do.
+          </p>
+          <p class="lead" data-translate="commitment-text-2">
+            Using only the finest ingredients, we ensure that every product meets our rigorous standards. Join us in
+            celebrating the taste and health benefits of premium peanuts.
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" data-translate="learn-more">Learn
+              More</button>
+              <a href="#contact" class="btn btn-outline-secondary btn-lg px-4" data-translate="contact-us">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <!-- Benefits Section -->
+    <div class="container px-4 py-5" id="featured-3">
+      <div class="benefits">
+        <h2 class="pb-2 border-bottom" style="font-size: 60px;" data-translate="benefits-title">Peanuts: Small Legumes,
+          Big Benefits</h2>
+      </div>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+          <div
+            class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+            <svg class="bi" width="1em" height="1em">
+              <use xlink:href="#collection"></use>
+            </svg>
+          </div>
+          <h3 data-translate="improve-heart-health">Improve Heart And Health</h3>
+          <p data-translate="improve-heart-health-text">Peanut reduces the risk of cardiovascular disease by 21%
+            compared to the average diet, whereas a low-fat diet reduced the risk by only 12%. The fat in peanuts comes
+            from the Protein.</p>
+        </div>
+        <div class="feature col">
+          <div
+            class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+            <svg class="bi" width="1em" height="1em">
+              <use xlink:href="#people-circle"></use>
+            </svg>
+          </div>
+          <h3 data-translate="protein-powerhouse">Protein Powerhouse</h3>
+          <p data-translate="protein-powerhouse-text">A single one-ounce serving of raw peanuts provides a whopping
+            seven grams of protein. The perfect post-workout snack, peanuts supply the protein your muscles need to
+            repair.</p>
+        </div>
+        <div class="feature col">
+          <div
+            class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+            <svg class="bi" width="1em" height="1em">
+              <use xlink:href="#toggles2"></use>
+            </svg>
+          </div>
+          <h3 data-translate="high-fiber">High In Fiber</h3>
+          <p data-translate="high-fiber-text">Peanuts excellent source of dietary fiber; they pack four grams of fiber
+            per serving, soluble and insoluble. Soluble fiber helps control blood sugar levels while insoluble fiber
+            supports the digestive system.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--end list-->
+
+
+
+    <!--contact-->
+
+    <!---->
+
+
+    <!-- Get in Touch Section -->
+    <section id="contact" class="contactus"> 
+    <h1 style="text-align: center; font-size: 60px;" data-translate="get-in-touch-title" ><b>GET IN TOUCH</b></h1><br><br>
+    <br>
+    <div class="container" style="background-color:transparent">
+      <br>
+      <div class="row" style="margin-left: 100px; ">
+
+        <div class="col-lg-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="blue" class="bi bi-geo-alt-fill"
+            viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+          </svg>
+          <h2 class="fw-normal" data-translate="address-title">Address</h2>
+          <p style="color: #333;">
+            <a href="https://maps.app.goo.gl/z9A4nKSzBeRBSMrx9" style="color: #333;"
+              data-translate="address-link">
+              8FVH+F36, Bharsingi, Maharashtra 441305
+            </a>
+          </p>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+            class="bi bi-telephone-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+          </svg>
+          <h2 class="fw-normal" data-translate="phone-title">Phone</h2>
+          <p style="color: #333;">
+            <a href="tel:+919167589330" style="color: #333;" data-translate="phone-link">+919167589330</a>
+          </p>
+        </div>
+
+        <div class="col-lg-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-envelope"
+            viewBox="0 0 16 16">
+            <path
+              d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+          </svg>
+          <h2 class="fw-normal" data-translate="email-title">Email</h2>
+          <p>
+            <a href="mailto:satynam@123.gmail.com" style="color: #4e4e4e;"
+              data-translate="email-link">satynam@123.gmail.com</a>
+          </p>
+        </div><!-- /.col-lg-4 -->
+      </div>
+    </div>
+    <br>
+    <!---->
+   
+
+    </section><br>
+    <!--endcontact-->
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 footer-logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThx5KBSLjRJ1gO9oUcVpsSAzk1XcmWxmL8sA&s" alt="Company Logo"height="200px" style="margin-left: 70px; border-radius:50%;width: 200px;"><br>
+            <p data-translate="footer-description" style="color: #ddd;">Your trusted partner in quality products. Our commitment is to deliver the best to our customers.</p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="footer-heading" data-translate="quick-links">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#home" data-translate="home">Home</a></li><br>
+              <li><a href="#about" data-translate="about-us">About Us</a></li><br>
+              <li><a href="#project" data-translate="products">Products</a></li><br>
+              <li><a href="#contact" data-translate="contact">Contact</a></li><br>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5 class="footer-heading" data-translate="contact-us">Contact Us</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-geo-alt-fill"></i> <a href="https://maps.google.com/?q=8FVH+F36,+Rohana,+Maharashtra+441305" style="color: #eeebeb;" data-translate="address-link">8FVH+F36,Rohana, Maharashtra 441305</a></li><br>
+              <li><i class="bi bi-telephone-fill"></i> <a href="tel:+123456789" data-translate="phone">+123 456 789</a></li><br>
+              <li><i class="bi bi-envelope"></i> <a href="mailto:satynam@gmail.com" data-translate="email">satynam@gmail.com</a></li><br>
+            </ul>
+            <h5 class="footer-heading" data-translate="follow-us">Follow Us</h5>
+            <div class="social-icons">
+              <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+              <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+              <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+              <a href="https://linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4">
+        <p class="text-center mb-0" style="color: #ddd;" data-translate="copyright"> Satynam Industries and Traders. All Rights Reserved.</p>
+      </div>
+    </footer>
+    </div>
+<!-- Bootstrap and Icons -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+    <!-- Rest of your HTML content here -->
+    <!-- Remember to add data-translate attributes to elements you want to translate -->
+
+    <script>
+
+      const languageToggle = document.getElementById('languageToggle');
+      const elements = document.querySelectorAll('[data-translate]');
+      let currentLanguage = 'en';
+
+      const translations = {
+
+        en: {
+          'brand': 'Satynam Industries and Traders',
+          'discover': 'Discover Nature\'s Golden Nuggets',
+          'premium': 'Premium Quality Peanuts',
+          'fresh': 'Farm-Fresh and Nutritious',
+          'support': 'Supporting Local Farmers',
+          'explore': 'Explore Our Peanut Paradise',
+          'home': 'Home',
+          'about-us': 'About Us',
+          'products': 'Products',
+          'order': 'Order',
+          'contact-us': 'Contact Us',
+          'best-peanut-sale': 'Best Peanut and Nut Sale',
+          'peanuts-healthy-treat': 'Peanuts Are A Healthy Treat That Is High In Protein, Fiber, And Heart-Healthy Nutrients.',
+          'peanut-rich-fiber': 'Peanut Rich In Fiber',
+          'raw-peanuts-fiber': 'Raw Peanuts Are Also An Excellent Source Of Dietary Fiber.',
+          'peanut-varieties': 'Varieties Of Peanuts And Nuts',
+          'peanut-protein': 'A Single One-Ounce Serving Of Raw Peanuts Provides A Whopping Seven Grams Of Protein.',
+          'previous': 'Previous',
+          'next': 'Next',
+          'our-products': 'Our Products',
+          'peanuts': 'Peanuts',
+          'flour': 'Flour',
+          'peanut-oil': 'Peanut Oil',
+          'all': 'All',
+          'white-peanuts': 'White Peanuts',
+          'peanuts': 'Peanuts',
+          'ground-nut': 'Ground Nut',
+          'red-peanut': 'Red Peanuts',
+          'wheat-flour': 'Wheat Flour',
+          'beasn-flour': 'Besan Flour',
+          'peant-oil': 'Peanut Oil',
+          'order': 'ORDER',
+          'white-peanuts': 'White Peanuts',
+          'order': 'ORDER',
+          'place-order': 'Place Your Order',
+          'name': 'Name',
+          'phone': 'Phone',
+          'address': 'Address',
+          'order-details': 'Order Details',
+          'close': 'Close',
+          'carousel-text': 'Use Roasted Peanuts To Make Your Favorite Trail Mix At Home, Or For Pure, Unadulterated, Nutty Snacking!',
+          'shop-now': 'Shop now',
+          'about-us-title': 'ABOUT US',
+          'commitment-title': 'Our Commitment to Quality',
+          'commitment-text-1': 'At our company, we pride ourselves on offering the highest quality peanuts and nut-based products. Our journey began with a passion for nutritious and delicious snacks, and we continue to uphold these values in everything we do.',
+          'commitment-text-2': 'Using only the finest ingredients, we ensure that every product meets our rigorous standards. Join us in celebrating the taste and health benefits of premium peanuts.',
+          'learn-more': 'Learn More',
+          'contact-us': 'Contact Us',
+          'benefits-title': 'Peanuts: Small Legumes, Big Benefits',
+          'improve-heart-health': 'Improve Heart And Health',
+          'improve-heart-health-text': 'Peanut reduces the risk of cardiovascular disease by 21% compared to the average diet, whereas a low-fat diet reduced the risk by only 12%. The fat in peanuts comes from the Protein.',
+          'protein-powerhouse': 'Protein Powerhouse',
+          'protein-powerhouse-text': 'A single one-ounce serving of raw peanuts provides a whopping seven grams of protein. The perfect post-workout snack, peanuts supply the protein your muscles need to repair.',
+          'high-fiber': 'High In Fiber',
+
+          'high-fiber-text': 'Peanuts excellent source of dietary fiber; they pack four grams of fiber per serving, soluble and insoluble. Soluble fiber helps control blood sugar levels while insoluble fiber supports the digestive system.',
+          'get-in-touch-title': 'GET IN TOUCH',
+          'address-title': 'Address',
+          'address-link': '8FVH+F36, Bharsingi, Maharashtra 441305',
+          'phone-title': 'Phone',
+          'phone-link': '+919167589330',
+          'email-title': 'Email',
+          'email-link': 'satynam@123.gmail.com',
+          'footer-description': 'Your trusted partner in quality products. Our commitment is to deliver the best to our customers.',
+    'quick-links': 'Quick Links',
+    'home': 'Home',
+    'about-us': 'About Us',
+    'services': 'Services',
+    'contact': 'Contact',
+    'contact-us': 'Contact Us',
+    'address-link': '8FVH+F36,Rohana, Maharashtra 441305',
+    'phone': '+123 456 789',
+    'email': 'satynam@gmail.com',
+    'follow-us': 'Follow Us',
+    'copyright': ' Satynam Industries and Traders. All Rights Reserved.'
+        },
+        hi: {
+          'brand': 'सत्यनम इंडस्ट्रीज एंड ट्रेडर्स',
+          'discover': 'प्रकृति के सुनहरे टुकड़े खोजें',
+          'premium': 'उच्च गुणवत्ता वाली मूंगफली',
+          'fresh': 'खेत से ताजा और पौष्टिक',
+          'support': 'स्थानीय किसानों का समर्थन',
+          'explore': 'हमारे मूंगफली स्वर्ग का अन्वेषण करें',
+          'home': 'होम',
+          'about-us': 'हमारे बारे में',
+          'products': 'उत्पाद',
+          'order': 'ऑर्डर करें',
+          'contact-us': 'संपर्क करें',
+          'best-peanut-sale': 'सर्वोत्तम मूंगफली और नट बिक्री',
+          'peanuts-healthy-treat': 'मूंगफली एक स्वस्थ व्यंजन है जो प्रोटीन, फाइबर और हृदय के लिए स्वस्थ पोषक तत्वों से भरपूर होता है।',
+          'peanut-rich-fiber': 'फाइबर से भरपूर मूंगफली',
+          'raw-peanuts-fiber': 'कच्ची मूंगफली आहार फाइबर का भी एक उत्कृष्ट स्रोत है।',
+          'peanut-varieties': 'मूंगफली और नट्स की विविधताएँ',
+          'peanut-protein': 'कच्ची मूंगफली की एक औंस सेवा में लगभग सात ग्राम प्रोटीन होता है।',
+          'previous': 'पिछला',
+          'next': 'अगला',
+          'our-products': 'हमारे उत्पाद',
+          'peanuts': 'मूंगफली',
+          'flour': 'आटा',
+          'peanut-oil': 'मूंगफली का तेल',
+          'all': 'सभी',
+          'white-peanuts': 'सफेद मूंगफली',
+          'peanuts': 'मूंगफली',
+          'ground-nut': 'भूमिगत अखरोट',
+          'red-peanut': 'लाल मूंगफली',
+          'wheat-flour': 'गेहूं का आटा',
+          'beasn-flour': 'बेसन का आटा',
+          'peant-oil': 'मूंगफली का तेल',
+          'order': 'आदेश',
+          'white-peanuts': 'सफेद मूंगफली',
+          'order': 'आदेश',
+          'place-order': 'अपना ऑर्डर दें',
+          'name': 'नाम',
+          'phone': 'फोन',
+          'address': 'पता',
+          'order-details': 'ऑर्डर विवरण',
+          'close': 'बंद करें',
+          'carousel-text': 'घर पर अपने पसंदीदा ट्रेल मिक्स बनाने के लिए भुनी हुई मूंगफली का उपयोग करें, या शुद्ध, बिना मिलावट वाले, नट्टी स्नैकिंग के लिए!',
+          'shop-now': 'अभी खरीदें',
+          'about-us-title': 'हमारे बारे में',
+          'commitment-title': 'गुणवत्ता के प्रति हमारी प्रतिबद्धता',
+          'commitment-text-1': 'हमारी कंपनी में, हम उच्च गुणवत्ता वाली मूँगफली और नट आधारित उत्पादों की पेशकश पर गर्व करते हैं। हमारी यात्रा एक पौष्टिक और स्वादिष्ट स्नैक्स के प्रति जुनून के साथ शुरू हुई, और हम इन मूल्यों को हर चीज़ में बनाए रखते हैं।',
+          'commitment-text-2': 'केवल सबसे अच्छे सामग्री का उपयोग करके, हम सुनिश्चित करते हैं कि हर उत्पाद हमारी कड़ी मानकों को पूरा करता है। प्रीमियम मूँगफली के स्वाद और स्वास्थ्य लाभों का जश्न मनाने के लिए हमारे साथ जुड़ें।',
+          'learn-more': 'अधिक जानें',
+          'contact-us': 'हमसे संपर्क करें',
+          'benefits-title': 'मूँगफली: छोटे बीन्स, बड़े लाभ',
+          'improve-heart-health': 'दिल और स्वास्थ्य में सुधार',
+          'improve-heart-health-text': 'मूँगफली औसत आहार की तुलना में हृदय रोग के जोखिम को 21% तक कम कर देती है, जबकि एक कम वसा वाला आहार केवल 12% जोखिम को कम करता है। मूँगफली में वसा प्रोटीन से आता है।',
+          'protein-powerhouse': 'प्रोटीन का पावरहाउस',
+          'protein-powerhouse-text': 'कच्ची मूँगफली का एक आउंस का भाग सात ग्राम प्रोटीन प्रदान करता है। आदर्श पोस्ट-वर्कआउट स्नैक, मूँगफली आपके मांसपेशियों को मरम्मत के लिए प्रोटीन प्रदान करता है।',
+          'high-fiber': 'फाइबर में उच्च',
+          'high-fiber-text': 'मूँगफली आहार फाइबर का उत्कृष्ट स्रोत है; वे एक भाग में चार ग्राम फाइबर पैक करते हैं, घुलनशील और अवघुलनशील। घुलनशील फाइबर रक्त शर्करा स्तर को नियंत्रित करने में मदद करता है जबकि अवघुलनशील फाइबर पाचन तंत्र का समर्थन करता है।',
+          'get-in-touch-title': 'संपर्क करें',
+          'address-title': 'पता',
+          'address-link': '8FVH+F36, भसिंगी, महाराष्ट्र 441305',
+          'phone-title': 'फोन',
+          'phone-link': '+919167589330',
+          'email-title': 'ईमेल',
+          'email-link': 'satynam@123.gmail.com',
+          'footer-description': 'आपका गुणवत्ता उत्पादों में विश्वसनीय भागीदार। हमारी प्रतिबद्धता अपने ग्राहकों को सबसे अच्छा प्रदान करने की है।',
+    'quick-links': 'त्वरित लिंक',
+    'home': 'होम',
+    'about-us': 'हमारे बारे में',
+    'services': 'सेवाएँ',
+    'contact': 'संपर्क',
+    'contact-us': 'संपर्क करें',
+    'address-link': '8FVH+F36, रोहणा, महाराष्ट्र 441305',
+    'phone': '+१२३ ४५६ ७८९',
+    'email': 'satynam@gmail.com',
+    'follow-us': 'हमें फॉलो करें',
+    'copyright':'सत्या नाम इंडस्ट्रीज और ट्रेडर्स। सर्वाधिकार सुरक्षित।'
+        }
+
+
+      };
+      let currentProduct = null;
+
+      function ORDER(event) {
+        const card = event.target.closest('.card');
+        const productName = card.querySelector('.card-title').textContent;
+        const quantity = card.querySelector('.quantity-input').value;
+        const price = card.querySelector('.price').textContent;
+
+        currentProduct = {
+          name: productName,
+          quantity: quantity,
+          price: price
+        };
+
+        document.getElementById('orderDetails').textContent = `${quantity}kg of ${productName} - ₹${price}`;
+      }
+
+      document.getElementById('submitOrder').addEventListener('click', function () {
+        const name = document.getElementById('customerName').value;
+        const phone = document.getElementById('customerPhone').value;
+        const address = document.getElementById('customerAddress').value;
+
+        if (name && phone && address) {
+          console.log('Order placed:', { customer: { name, phone, address }, product: currentProduct });
+          alert('Thank you for your order! We will contact you shortly to confirm.');
+          $('#orderModal').modal('hide');
+        } else {
+          alert('Please fill in all fields.');
+        }
+      });
+
+      function attachEventListeners() {
+        document.querySelectorAll('.quantity-input').forEach(input => {
+          input.addEventListener('input', updatePrice);
+        });
+
+        document.querySelectorAll('.order-button').forEach(button => {
+          button.addEventListener('click', ORDER);
+        });
+      }
+
+
+      function translatePage() {
+        elements.forEach(element => {
+          const key = element.getAttribute('data-translate');
+          if (translations[currentLanguage][key]) {
+            element.textContent = translations[currentLanguage][key];
+          }
+        });
+      }
+
+      languageToggle.addEventListener('click', () => {
+        currentLanguage = currentLanguage === 'en' ? 'hi' : 'en';
+        translatePage();
+      });
+
+      // Initial translation
+      translatePage();
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const products = [
+        {
+          name: "White Peanuts",
+          price: 90,
+          image: "https://5.imimg.com/data5/SH/LA/MY-37404391/roasted-peanuts-500x500.jpg",
+          category: "peanuts"
+        },
+        {
+          name: "Peanuts",
+          price: 100,
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ58GvGHtMpLCJvMp94yaqMW70bzmwf5_l3qKpaX_tJQLRtZBUyLkZcanS4SwkWVvnZI_o&usqp=CAU",
+          category: "peanuts"
+        },
+        {
+          name: "Red Skin Peanuts",
+          price: 120,
+          image: "https://image.made-in-china.com/2f0j00RIYoMPlqAdbS/China-Peanut-Big-Size-Peanut-Kernel-Red-Skin-Cheap-Price-Good-Quality.webp",
+          category: "peanuts"
+        },
+        {
+          name: "Ground Nut",
+          price: 80,
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUJmB7qPYX6kyc3dyOEfZBwvw9nxH_Z_dkzNw1lTE7XEQfJRcMzY3ga-Hh2QvqnLaiDoE&usqp=CAU",
+          category: "peanuts"
+        },
+        {
+          name: "Red Peanuts",
+          price: 120,
+          image: "https://static.toiimg.com/photo/103099895.cms",
+          category: "peanuts"
+        },
+        {
+          name: "Bowl Peanuts",
+          price: 90,
+          image: "https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325003/peanuts-in-a-bowl-on-wooden-table-top-down-view.jpg",
+          category: "peanuts"
+        },
+        {
+          name: "Wheat Flour",
+          price: 95,
+          image: "https://5.imimg.com/data5/SELLER/Default/2021/7/EQ/AA/AY/6428050/5-kg-wheat-flour-500x500.jpeg",
+          category: "flour"
+        },
+        {
+          name: "Besan Flour",
+          price: 150,
+          image: "https://farmm2home.com/wp-content/uploads/2024/02/besan-powder-copy-scaled.jpeg",
+          category: "flour"
+        },
+        {
+          name: "Peanut Oil",
+          price: 120,
+          image: "https://5.imimg.com/data5/SELLER/Default/2023/12/367866050/MM/BC/KQ/22076159/groundnut-oil-packing-pouch-500x500.jpg",
+          category: "oil"
+        }
+      ];
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const products = document.querySelectorAll('#product-gallery .col');
+
+        filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            products.forEach(product => {
+              const category = product.getAttribute('data-category');
+              if (filter === 'all' || category === filter || (filter === 'peanuts' && category.includes('peanut'))) {
+                product.style.display = '';
+              } else {
+                product.style.display = 'none';
+              }
+            });
+
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+          });
+        });
+      });
+
+
+
+      function createProductCard(product) {
+        return `
+      <div class="col product-item ${product.category}">
+          <div class="card shadow-sm h-100">
+              <img src="${product.image}" class="card-img-top" alt="${product.name}" style="height: 250px; object-fit: cover;">
+              <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">${product.name}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">₹<span class="price">${product.price}</span>/-</h6>
+                  <div class="mt-auto">
+                      <div class="input-group mb-3">
+                          <span class="input-group-text">Quantity</span>
+                          <input type="number" class="form-control quantity-input" value="1" min="1">
+                          <span class="input-group-text">kg</span>
+                      </div>
+                      <button class="btn btn-primary w-100 order-button" data-bs-toggle="modal" data-bs-target="#orderModal">ORDER</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  `;
+      }
+
+      function displayProducts(category = 'all') {
+        const gallery = document.getElementById('product-gallery');
+        gallery.innerHTML = '';
+        products.forEach(product => {
+          if (category === 'all' || product.category === category) {
+            gallery.innerHTML += createProductCard(product);
+          }
+        });
+        attachEventListeners();
+      }
+
+      function updatePrice(event) {
+        const quantity = event.target.value;
+        const card = event.target.closest('.card');
+        const priceElement = card.querySelector('.price');
+        const basePrice = products.find(p => p.name === card.querySelector('.card-title').textContent).price;
+        priceElement.textContent = (basePrice * quantity).toFixed(2);
+      }
+
+      function ORDER(event) {
+        const card = event.target.closest('.card');
+        const productName = card.querySelector('.card-title').textContent;
+        const quantity = card.querySelector('.quantity-input').value;
+        const price = card.querySelector('.price').textContent;
+
+        currentProduct = {
+          name: productName,
+          quantity: quantity,
+          price: price
+        };
+
+        document.getElementById('orderDetails').textContent = `${quantity}kg of ${productName} - ₹${price}`;
+      }
+
+      function attachEventListeners() {
+        document.querySelectorAll('.quantity-input').forEach(input => {
+          input.addEventListener('input', updatePrice);
+        });
+
+        document.querySelectorAll('.order-button').forEach(button => {
+          button.addEventListener('click', ORDER);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        displayProducts();
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            displayProducts(e.target.getAttribute('data-filter'));
+          });
+        });
+
+        document.getElementById('submitOrder').addEventListener('click', function () {
+          const name = document.getElementById('customerName').value;
+          const phone = document.getElementById('customerPhone').value;
+          const address = document.getElementById('customerAddress').value;
+
+          if (name && phone && address) {
+            console.log('Order placed:', { customer: { name, phone, address }, product: currentProduct });
+            alert('Thank you for your order! We will contact you shortly to confirm.');
+            const orderModal = new bootstrap.Modal(document.getElementById('orderModal'));
+            orderModal.hide();
+          } else {
+            alert('Please fill in all fields.');
+          }
+        });
+      });
+
+
+      function displayProducts(category = 'all') {
+        const gallery = document.getElementById('product-gallery');
+        gallery.innerHTML = '';
+        products.forEach(product => {
+          if (category === 'all' || product.category === category) {
+            gallery.innerHTML += createProductCard(product);
+          }
+        });
+        attachEventListeners();
+      }
+
+      function attachEventListeners() {
+        document.querySelectorAll('.quantity-input').forEach(input => {
+          input.addEventListener('input', updatePrice);
+        });
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+          button.addEventListener('click', ORDER);
+        });
+      }
+
+      function updatePrice(event) {
+        const quantity = event.target.value;
+        const card = event.target.closest('.card');
+        const priceElement = card.querySelector('.price');
+        const basePrice = products.find(p => p.name === card.querySelector('.card-title').textContent).price;
+        priceElement.textContent = (basePrice * quantity).toFixed(2);
+      }
+
+
+      document.addEventListener('DOMContentLoaded', () => {
+        displayProducts();
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            displayProducts(e.target.getAttribute('data-filter'));
+          });
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById('name').value;
+          const phone = document.getElementById('phone').value;
+          const email = document.getElementById('email').value;
+          const message = document.getElementById('message').value;
+
+          // Here you would typically send this data to a server
+          console.log('Form submitted:', { name, phone, email, message });
+
+          // Show a success message (you can replace this with a more sophisticated UI feedback)
+          alert('Thank you for your message. We will get back to you soon!');
+
+          // Clear the form
+          form.reset();
+        });
+      });
+      document.addEventListener('DOMContentLoaded', function () {
+        var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExampleDark'), {
+          interval: 5000,
+          wrap: true
+        });
+      });
+    </script>
+</body>
+
+</html
